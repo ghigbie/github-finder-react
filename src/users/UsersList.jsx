@@ -7,19 +7,19 @@ class UserList extends Component{
         this.state = {
             users = [
                 {
-                    id: 'id',
+                    id: '1',
                     login: 'Mojobo',
                     avatar_url: 'https://avatar0.gihubusercontent.com/u/1?v=4',
                      html_url: 'https://github.com/mojombo'
                 },
                 {
-                    id: 'id',
+                    id: '2',
                     login: 'Mojobo',
                     avatar_url: 'https://avatar0.gihubusercontent.com/u/1?v=4',
                     html_url: 'https://github.com/mojombo'
                 },
                 {
-                    id: 'id',
+                    id: '3',
                     login: 'Mojobo',
                     avatar_url: 'https://avatar0.gihubusercontent.com/u/1?v=4',
                     html_url: 'https://github.com/mojombo'
@@ -31,7 +31,14 @@ class UserList extends Component{
     render(){
         return(
             <div className="UserList">
-
+                { this.state.users.map((user) => (
+                    <UserItem 
+                        key={user.id}
+                        login={user.login}
+                        avatar_url={user.avatar_url}
+                        html_url={user.html_url}
+                    />
+                ))}
             </div>
         )
     }
