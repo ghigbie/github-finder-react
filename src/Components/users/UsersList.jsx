@@ -1,11 +1,11 @@
-import React, {Component} from './node_modules/react';
+import React, {Component} from 'react';
 import UserItem from './UserItem';
 
 class UsersList extends Component{
     constructor(props){
         super(props);
         this.state = {
-            users = [
+            users: [
                 {
                     id: '1',
                     login: 'Mojobo',
