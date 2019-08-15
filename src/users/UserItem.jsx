@@ -14,7 +14,8 @@ class UserItem extends Component{
                 <div>
                     <a 
                         href={html_url}
-                        className='btn btn-dark btn-sm my'></a>
+                        className='btn btn-dark btn-sm my-1'>
+                    </a>
                 </div>
             </div>
         );
