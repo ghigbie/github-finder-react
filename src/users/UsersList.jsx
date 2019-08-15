@@ -1,7 +1,7 @@
 import React, {Component} from './node_modules/react';
 import UserItem from './UserItem';
 
-class UserList extends Component{
+class UsersList extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -44,4 +44,4 @@ class UserList extends Component{
     }
 }
 
-export default UserList;
+export default UsersList;
