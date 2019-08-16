@@ -28,20 +28,26 @@ class UsersList extends Component{
         }
     }
 
+
     render(){
+        const userStyle = {
+            display: 'grid',
+            gridTemplateColumns: 'reapeat(3 1fr)',
+            gridGap: '1rem',
+        }
         return(
-            <div className="UserList">
+            <div className="UserList"
+                 style={userStyle}>
                 { this.state.users.map((user) => (
                     <UserItem 
                         key={user.id}
-                        login={user.login}
-                        avatar_url={user.avatar_url}
-                        html_url={user.html_url}
+                        user={user}
                     />
                 ))}
             </div>
         )
     }
 }
+
 
 export default UsersList;
