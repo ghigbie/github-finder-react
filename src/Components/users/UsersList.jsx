@@ -1,30 +1,25 @@
 import React, {Component} from 'react';
 import UserItem from './UserItem';
 
-class UsersList extends Component{
-    constructor(props){
-        super(props);
-    }
-
-    render(){
-        const userStyle = {
-            display: 'grid',
-            gridTemplateColumns: 'reapeat(3 1fr)',
-            gridGap: '1rem',
-        }
+const UsersList = ({ users, loading}) => {
         return(
             <div className="UserList"
                  style={userStyle}>
-                { this.props.users.map((user) => (
+                { users.map((user) => (
                     <UserItem 
                         key={user.id}
                         user={user}
                     />
                 ))}
             </div>
-        )
-    }
+    );
 }
+
+const userStyle = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridGap: '1rem'
+};
 
 
 export default UsersList;
