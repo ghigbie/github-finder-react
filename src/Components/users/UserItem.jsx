@@ -1,7 +1,7 @@
 import React from 'react';
 
-const UserItem = () => {
-        const { avatar_url, login, html_url } = this.props.user;
+const UserItem = (props) => {
+        const { avatar_url, login, html_url } = props.user;
         return(
             <div className='card text-center'>
                 <img
