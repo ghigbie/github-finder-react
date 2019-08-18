@@ -30,7 +30,7 @@ class App extends Component {
     })
   }
 
-  clear = () => {
+  clearUsers = () => {
     this.setState({ users: []});
   }
 
@@ -39,7 +39,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <div className="container">
-          <Search searchUsers={this.searchUsers} clear={this.clear}/>
+          <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers}/>
           <UsersList loading={this.state.loading} users={this.state.users}/>    
         </div>
       </div>
