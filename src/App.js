@@ -49,12 +49,18 @@ class App extends Component {
           <Navbar />
           <div className="container">
             <Alert alert={this.state.alert} /> 
-            <Search 
-              searchUsers={this.searchUsers} 
-              clearUsers={this.clearUsers}
-              setAlert={this.setAlert}
-              showClear={users.length > 0 ? true : false}/>
-            <UsersList loading={loading} users={users}/>    
+            <Switch>
+              <Route render={props => (
+                <Fragment>
+                  <Search
+                    searchUsers={this.searchUsers}
+                    clearUsers={this.clearUsers}
+                    setAlert={this.setAlert}
+                    showClear={users.length > 0 ? true : false} />
+                  <UsersList loading={loading} users={users} />    
+                </Fragment>
+              )} />
+            </Switch>
           </div>
         </div>
       </Router>
