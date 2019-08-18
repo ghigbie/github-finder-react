@@ -5,11 +5,12 @@ export class Search extends Component {
         return (
             <div className='Search'>
                 <form className="form">
-                    <input 
-                        type="text"
-                        name="text"
-                        placeholder="Search users..."
-                    />
+                    <input type="text"
+                           name="text"
+                           placeholder="Search users..."/>
+                    <input type="submit" 
+                           value="Search"
+                           className="btn btn-dark btn-block"/>
                 </form>
             </div>
         )
