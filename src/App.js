@@ -30,9 +30,8 @@ class App extends Component {
     })
   }
 
-  clearUsers = () => {
-    this.setState({ users: []});
-  }
+  clearUsers = () => this.setState({ users: [], loading: false});
+
 
   render(){
     return (
