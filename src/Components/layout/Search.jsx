@@ -19,7 +19,9 @@ export class Search extends Component {
         this.setState({text: ''});
     }
 
+
     render() {
+        const { showClear, clearUsers } = this.props;
         return (
             <div className='Search'>
                 <form className="form"
@@ -33,9 +35,9 @@ export class Search extends Component {
                            value="Search"
                            className="btn btn-dark btn-block"/>
                 </form>
-                { this.props.showClear &&
-                    (<button className="btn btn-light btn-block"
-                             onClick={this.props.clearUsers}>Clear</button>)
+                { showClear &&
+                    <button className="btn btn-light btn-block"
+                             onClick={clearUsers}>Clear</button>
                 }
             </div>
         )
