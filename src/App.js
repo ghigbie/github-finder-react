@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import axios  from 'axios';
 
+import Alert from './components/layout/Alert';
 import Navbar from './components/layout/Navbar';
 import Search from './components/layout/Search';
 import UsersList from './components/users/UsersList';
@@ -34,7 +35,8 @@ class App extends Component {
   clearUsers = () => this.setState({ users: [], loading: false});
 
   setAlert = (msg, type) => {
-    this.setState({ alert : { msg, type}})
+    this.setState({ alert : { msg, type}});
+    setTimeout(() => this.setState({ alert: null }), 2500);
   } 
 
   render(){
@@ -44,6 +46,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <div className="container">
+          <Alert alert={this.state.alert} /> 
           <Search 
             searchUsers={this.searchUsers} 
             clearUsers={this.clearUsers}
