@@ -5,9 +5,8 @@ export class Search extends Component {
         text: ''
     }
 
-    handleOnChange = (e) => {
-        this.setState(() => ({text: e.target.value}));
-    }
+    handleOnChange = e => this.setState({ [e.target.name]: e.target.value});
+
 
     render() {
         return (
