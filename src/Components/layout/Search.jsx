@@ -8,6 +8,7 @@ export class Search extends Component {
 
     static propTypes = {
         searchUsers: PropTypes.func.isRequired,
+        clear: PropTypes.func.isRequired,
     }
 
     onChange = e => this.setState({ [e.target.name]: e.target.value});
@@ -31,6 +32,8 @@ export class Search extends Component {
                            value="Search"
                            className="btn btn-dark btn-block"/>
                 </form>
+                <button className="btn btn-light btn-block"
+                        onClick={this.props.clear}>Clear</button>
             </div>
         )
     }
