@@ -7,6 +7,7 @@ import Alert from './components/layout/Alert';
 import Navbar from './components/layout/Navbar';
 import Search from './components/layout/Search';
 import UsersList from './components/users/UsersList';
+import About from './components/pages/About';
 
 class App extends Component {
   state = {
@@ -60,6 +61,7 @@ class App extends Component {
                   <UsersList loading={loading} users={users} />    
                 </Fragment>
               )} />
+              <Route exact path='/about' component={About}/>
             </Switch>
           </div>
         </div>
