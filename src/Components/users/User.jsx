@@ -40,7 +40,7 @@ class User extends Component {
              <Fragment>
                 <Link 
                     to='/'
-                    classNAme='btn btn-light'>
+                    className='btn btn-light'>
                     Back to Search
                 </Link>
                 Hireable: {' '}
