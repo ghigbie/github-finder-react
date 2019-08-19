@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Spinner from  './../layout/Spinner';
 
-export class User extends Component {
+class User extends Component {
 
     static propTypes = {
+        loading: PropTypes.bool.isRequired,
         user: PropTypes.object.isRequired,
+        getUser: PropTypes.func.isRequired,
     }
 
     componentDidMount(){
