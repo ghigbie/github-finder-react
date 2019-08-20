@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import RepoItem from './RepoItem';
 
 const Repos = ({ repos }) => {
+    console.log('Repos: ', repos);
     return (
         <div>
-            repos.map((repo) => <RepoItem repo={repo} key={repo.id} />)
+    
+            { repos.map((repo) => {
+                return <RepoItem repo={repo} key={repo.id} />
+            })}
+
         </div>
-    )
+    );
 }
 
 Repos.propTypes = {
