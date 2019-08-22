@@ -1,30 +1,28 @@
-import React, from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Search = ({ searchUsers, showClear, clearUsers }) => {
-    state = {
-        text: ''
-    }
+const Search = ({ searchUsers, showClear, clearUsers, setAlert }) => {
+    const [text, setText] = useState('')
 
-    const onChange = e => this.setState({ [e.target.name]: e.target.value});
+    const onChange = e => setText(e.target.value);
     const onSubmit = e => {
         e.preventDefault();
-        if(this.state.text === ''){
+        if(text === ''){
             setAlert('Please provide text for searching', 'light')
         }else{
-            searchUsers(this.state.text);
-            this.setState({text: ''});
+            searchUsers(text);
+            setText('');
         }
     }
 
         return (
             <div className='Search'>
                 <form className="form"
-                      onSubmit={this.onSubmit}>
+                      onSubmit={onSubmit}>
                     <input type="text"
                            name="text"
-                           value={this.state.text}
-                           onChange={this.onChange}
+                           value={text}
+                           onChange={onChange}
                            placeholder="Search users..."/>
                     <input type="submit" 
                            value="Search"
