@@ -1,32 +1,22 @@
-import React, { Component } from 'react';
+import React, from 'react';
 import PropTypes from 'prop-types';
 
-export class Search extends Component {
+const Search = ({ searchUsers, showClear, clearUsers }) => {
     state = {
         text: ''
     }
 
-    static propTypes = {
-        searchUsers: PropTypes.func.isRequired,
-        clearUsers: PropTypes.func.isRequired,
-        showClear: PropTypes.bool.isRequired,
-        setAlert: PropTypes.func.isRequired
-    }
-
-    onChange = e => this.setState({ [e.target.name]: e.target.value});
-    onSubmit = e => {
+    const onChange = e => this.setState({ [e.target.name]: e.target.value});
+    const onSubmit = e => {
         e.preventDefault();
         if(this.state.text === ''){
-            this.props.setAlert('Please provide text for searching', 'light')
+            setAlert('Please provide text for searching', 'light')
         }else{
-            this.props.searchUsers(this.state.text);
+            searchUsers(this.state.text);
             this.setState({text: ''});
         }
     }
 
-
-    render() {
-        const { showClear, clearUsers } = this.props;
         return (
             <div className='Search'>
                 <form className="form"
@@ -45,8 +35,15 @@ export class Search extends Component {
                              onClick={clearUsers}>Clear</button>
                 }
             </div>
-        )
-    }
+        );
+
+}
+
+Search.propTypes = {
+    searchUsers: PropTypes.func.isRequired,
+    clearUsers: PropTypes.func.isRequired,
+    showClear: PropTypes.bool.isRequired,
+    setAlert: PropTypes.func.isRequired
 }
 
 export default Search
