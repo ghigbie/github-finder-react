@@ -37,8 +37,8 @@ const User = ({user, match, loading, repos, getUser, getUserRepos}) => {
                     Back to Search
                 </Link>
                 Hireable: {' '}
-                {hireable ? <i className="fas fa-check text-success"></i> :
-                            <i className="fas fa-times-circle text-danger"></i>   }
+                {hireable ? <i className="fas fa-check text-success"> yes</i> :
+                            <i className="fas fa-times-circle text-danger"> no</i>   }
                 <div className="card grid-2">
                     <div className="all-center">
                         <img 
@@ -48,7 +48,7 @@ const User = ({user, match, loading, repos, getUser, getUserRepos}) => {
                             style={{ width: '150px'}}
                         />
                         <h1>{ name }</h1>
-                        <p>Location: { location }</p>
+                        <p>Location: { location ? location : 'No location provided' }</p>
                     </div>
                     <div>
                         { bio && (
