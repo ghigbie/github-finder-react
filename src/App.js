@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import axios  from 'axios';
 
-import Alert from './components/layout/Alert';
-import Navbar from './components/layout/Navbar';
-import Search from './components/layout/Search';
-import UsersList from './components/users/UsersList';
-import User from './components/users/User';
-import About from './components/pages/About';
+import Alert from './Components/layout/Alert';
+import Navbar from './Components/layout/Navbar';
+import Search from './Components/layout/Search';
+import UsersList from './Components/users/UsersList';
+import User from './Components/users/User';
+import About from './Components/pages/About';
 
 const App = () => {
   const [users, setUsers] = useState([]);
